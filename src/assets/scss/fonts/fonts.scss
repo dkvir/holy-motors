@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Helvetica_normal';
+    src: url("~@/assets/scss/fonts/Linotype-Lt.ttf");
+
+
+};
+@font-face {
+    font-family: 'Helvetica_it';
+    src: url('~@/assets/scss/fonts/Linotype-It.ttf');
+
+};
+@font-face {
+    font-family: 'Helvetica_roman';
+    src: url('~@/assets/scss/fonts/Linotype-Roman.ttf');
+
+};
+@font-face {
+    font-family: 'Helvetica_it_56';
+    src: url('~@/assets/scss/fonts/Linotype-56-It.ttf');
+
+};
+@font-face {
+    font-family: 'Helvetica_bold';
+    src: url('~@/assets/scss/fonts/Linotype-Bold.ttf');
+
+};
+@font-face {
+    font-family: 'Helvetica_it_bold';
+    src: url('~@/assets/scss/fonts/Linotype-Bold-It.ttf');
+
+};
+
+
+
+$Helvetica_normal: 'Helvetica_normal';
+$Helvetica_it: 'Helvetica_it';
+$Helvetica_roman: 'Helvetica_roman';
+$Helvetica_it_56: 'Helvetica_it_56';
+$Helvetica_bold: 'Helvetica_bold';
+$Helvetica_it_bold: 'Helvetica_it_bold';
+
