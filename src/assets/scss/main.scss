@@ -4,3 +4,68 @@
 @import "@/assets/scss/animations.scss";
 
 
+h2 {
+    font-size: 36px;
+    font-family: $Helvetica_bold;
+  }
+  h3 {
+    font-size: 28px;
+    font-family: $Helvetica_bold;
+  }
+  h4 {
+    font-size: 20px;
+    font-family: $Helvetica_roman;
+  }
+  button {
+    background-color: transparent;
+  }
+  span {
+    font-family: $Helvetica_bold;
+  }
+  p{
+    font-family: $Helvetica_normal;
+  }
+
+  input[type="text"] {
+    background-color: transparent;
+    border: 1px solid $black;
+    height: 30px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+    ::placeholder {
+      color: $black;
+    }
+  }
+  
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+  label {
+    cursor: pointer;
+  }
+  input[type="checkbox"] + label:before {
+    border: 1px solid $black;
+    content: "\00a0";
+    display: inline-block;
+    font-family: $Helvetica_roman;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    margin: 0 .25em 0 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+  input[type="checkbox"]:checked + label:before {
+    background: transparent;
+    color: $black;
+    content: "\2713";
+    text-align: center;
+  }
+  input[type="checkbox"]:checked + label:after {
+    font-weight: bold;
+  }
+  
+  input[type="checkbox"]:focus + label::before {
+      outline: rgb(59, 153, 252) auto 5px;
+  }
