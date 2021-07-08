@@ -1,29 +1,77 @@
 <template>
   <div class="footers">
-      <div class="home__bottom footers__hAnim"></div>
-      <div class="footers__body">
-        <div class="footers__body-bAnim conf-anim"></div>
-        <div class="footers__body__wrapper">
+    <div class="home__bottom footers__hAnim"></div>
+    <div class="footers__body">
+      <div class="footers__body-bAnim conf-anim"></div>
+      <div class="footers__body__wrapper">
+        <div class="rights">
+          <div class="rights__title">
+            <div class="rights__title-icon">
+              <fa class="icon" :icon="['fas', 'arrow-right']" />
+            </div>
+            <div class="rights__title-text">
+              <h4>ძვირფასო მომხმარებელო,</h4>
+            </div>
+          </div>
+          <div class="rights__body">
+            <p>
+              მადლობას გიხდით Elvis-ის მომსახურებით სარგებლობისთვის. ჩვენი
+              მიზანია გაგიწიოთ საუკეთესო ხარისხის მომსახურეობა.
+            </p>
+            <p>
+              კონფიდენციალურობის შესახებ არსებული წესები გაგაცნობთ თუ რა სახის
+              ინფორმაციის შეგროვებას ვახორციელებთ, როგორ ვიყენებთ და ვამუშავებთ
+              მას, ასევე თქვენი გადაწყვეტილების შესახებ ჩვენს მიერ ინფორმაციის
+              გამოყენებაზე. აღნიშნული წესები და პირობები მოქმედებს ვებ-გვერდის
+              ნებისმიერი ტექნიკური მოწყობილობით გამოყენების შემთხვევაში.
+            </p>
+          </div>
+          <div class="rights__title">
+            <div class="rights__title-icon">
+              1
+            </div>
+            <div class="rights__title-text">
+              <h4>ინფორმაციის შეგროვება</h4>
+            </div>
+          </div>
+          <div class="rights__body">
+            <p>1.2. Elvis-ის ვებ-გვერდზე შესაძლებელია თქვენს შესახებ მოგვაწოდოთ
+            შემდეგი სახის ინფორმაცია პირადი ანგარიშისა და პერსონალური
+            მონაცემების შევსების დროს:</p>
+            <p>1.2.1. სახელი და გვარი;</p>
+            <p>1.2.2. სქესი;</p>
+            <p>1.2.3. დაბადების თარიღი;</p>
+            <p>1.2.4. ელექტრონული ფოსტის მისამართი;</p>
+            <p>1.2.5. ფაქტობრივი საცხოვრებელი ადგილის მისამართი;</p>
+            <p>1.2.6. საკონტაქტო ნომერი;</p>
+            <p>1.2.7. საკრედიტო ბარათის შესახებ მონაცემები;</p>
+            <p>1.2.8. შეკვეთის შესახებ სხვა დეტალები.</p>
+            <p>1.3. თქვენ საშუალება გეძლევათ ანგარიშის
+            პარამეტრებიდან განაახლოთ ან დააკორექტიროთ ინფორმაცია თქვენს შესახებ.</p>
+            <p>1.4. სოციალური ქსელის (მაგ: “ფეისბუქი”) საშუალებით თქვენს ანგარიშზე შესვლით, ჩვენ თქვენს შესახებ ვღებულობთ შემდეგ ინფორმაციას: </p>
+            <p>1.4.1. პირად მაიდენტიფიცირებელ მონაცემებს;</p>
+            <p>1.4.2. ელექტრონული ფოსტის მისამართს (ასეთის არსებობის შემთხვევაში);</p>
+            <p>1.4.3. საჯარო პროფილისა და თქვენი კონტაქტების შესახებ ინფორმაციას.</p> 
+             
             
+              
+          </div>
         </div>
       </div>
-
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss">
 @import "../assets/scss/main.scss";
 @import "../assets/scss/fonts/fonts.scss";
 
-.conf-anim{
+.conf-anim {
   height: 40%;
   align-self: flex-end;
 }
-
 </style>

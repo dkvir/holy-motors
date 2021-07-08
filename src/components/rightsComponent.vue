@@ -64,9 +64,13 @@ export default {};
 
 .footers {
   width: 100%;
-  height: 100%;
-  background-color: cornsilk;
+  height: 85vh;
+  background-color: $black;
   position: relative;
+  padding-top: 75px;
+  padding-bottom: 20px;
+
+//   overflow: scroll;
   &__hAnim {
     width: 100%;
     height: 50px;
@@ -79,9 +83,7 @@ export default {};
     height: 100%;
     background-color: $black;
     display: flex;
-    padding: 30px;
     color: $orange;
-    overflow: scroll;
     &-bAnim {
       background-image: url("../assets/img/Group224.png");
       background-repeat: no-repeat;
@@ -96,6 +98,7 @@ export default {};
     &__wrapper {
       width: 100%;
       height: 100%;
+      overflow: scroll;
 
       .rights {
         width: 100%;
@@ -128,11 +131,12 @@ export default {};
         &__body{
             width: 100%;
             height: 90%;
-            overflow: scroll;
+            padding-bottom: 20px;
+
             p{
             font-family: "Helvetica_normal";
             padding: 10px;
-            line-height: 1.5rem;
+            line-height: 2.5rem;
             }
         }
       }

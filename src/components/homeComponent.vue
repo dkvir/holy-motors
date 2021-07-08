@@ -1,12 +1,37 @@
 <template>
   <div class="header">
     <div class="header__background">
+      <div class="nav">
+        <div class="nav__button">
+          <button
+            @click="toggleMobileNav"
+            v-show="burger.mobile"
+            :class="{ 'icon-active': burger.mobileNav }"
+          >
+            <img src="../assets/img/Group150.png" alt="nav" />
+          </button>
+        </div>
+        <transition name="mobile-animation">
+          <navigation
+            v-show="burger.mobileNav"
+            :activetabs="activetabs"
+            :rightsComponent="rightsComponent"
+            :confidencialComponent="confidencialComponent"
+            :contactComponent="contactComponent"
+            :aboutComponent="aboutComponent"
+            :handleCompany="handleCompany"
+            :handleCourier="handleCourier"
+            :toggleMobileNav="toggleMobileNav"
+          />
+        </transition>
+      </div>
+
       <div class="buttons">
         <button @click="handleCompany()" class="btn btn-company">
-          კომპანიები
+          <p>კომპანიები</p>
         </button>
         <button @click="handleCourier()" class="btn btn-rights">
-          კურიერები
+          <p>კურიერები</p>
         </button>
       </div>
     </div>
@@ -20,10 +45,12 @@
       <img src="../assets/img/Group85.png" alt="slogan" />
     </div>
 
-    <div class="home__body-right body-both">
-      <video class="video" autoplay loop muted>
-        <source src="../assets/video/MOT2video.mp4" type="video/mp4" />
-      </video>
+    <div class="home__body__right body-both">
+      <div class="home__body__right-video">
+        <video class="video" autoplay loop muted>
+          <source src="../assets/video/MOT2video.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="onvideo-animation"></div>
     </div>
 
@@ -49,18 +76,56 @@
 </template>
 
 <script>
+import { reactive } from "@vue/reactivity";
+import navigation from "../components/navigation.vue";
+import { onBeforeMount, onUnmounted } from "@vue/runtime-core";
 export default {
+  components: {
+    navigation,
+  },
   props: {
     handleCompany: Function,
     activetabs: Object,
     handleCourier: Function,
     scroll: Function,
+    rightsComponent: Function,
+    confidencialComponent: Function,
+    contactComponent: Function,
+    aboutComponent: Function,
   },
   setup() {
     const mouseOver = (comp) => {
-      document.querySelector(comp).classList.add('mouseover');
+      document.querySelector(comp).classList.add("mouseover");
     };
-    return { mouseOver };
+
+    const burger = reactive({
+      mobileNav: null,
+      mobile: null,
+      windowWidth: null,
+    });
+    const toggleMobileNav = () => {
+      burger.mobileNav = !burger.mobileNav;
+    };
+    const checkScreen = () => {
+      burger.windowWidth = window.innerWidth;
+      if (burger.windowWidth <= 1024) {
+        burger.mobile = true;
+        return;
+      }
+      burger.mobile = false;
+      burger.mobileNav = false;
+      return;
+    };
+    onBeforeMount(() => {
+      window.addEventListener("resize", checkScreen);
+      checkScreen();
+    });
+    onUnmounted(() => {
+      window.removeEventListener("resize", checkScreen);
+      checkScreen()
+    });
+
+    return { mouseOver, burger, toggleMobileNav, checkScreen };
   },
 };
 </script>
@@ -75,6 +140,9 @@ export default {
   border-bottom: 1px solid black;
   &__background {
     background-image: url("../assets/img/headeranim.png");
+    background-position: center;
+    background-size: 150% auto;
+    background-repeat: no-repeat;
     width: 100%;
     height: 80px;
     animation: moveBg 30s linear infinite;
@@ -82,8 +150,29 @@ export default {
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      &__button {
+        width: 115px;
+        height: 115px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button{
+          img{
+            width: 60px;
+            height: 60px;
+          }
+        }
+        .icon-active {
+          transform: rotate(180deg);
+        }
+      }
+    }
     .btn {
-      width: 200px;
+      width: 382px;
       height: 80px;
       background-color: $black;
       color: $orange;
@@ -105,18 +194,21 @@ export default {
       &:hover::before {
         transform: scale(1);
       }
+      &:hover {
+        color: #fff;
+      }
     }
     .btn-company {
       clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
       position: absolute;
       top: 0;
-      right: 135px;
+      right: 201px;
     }
     .btn-rights {
       clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
       position: absolute;
       top: 0;
-      right: -20px;
+      right: -95px;
     }
   }
 }
@@ -150,23 +242,37 @@ export default {
       height: 70%;
     }
   }
-  &-right {
+  &__right {
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 4;
-    .video {
+    position: relative;
+    &-video {
       height: 100%;
+      width: 100%;
       border-radius: 30px 0px 0px 30px;
       border: 4px solid $black;
+      position: absolute;
+      right: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      video {
+        height: 100%;
+        border-radius: 30px 0px 0px 30px;
+      }
     }
     .onvideo-animation {
-      position: relative;
-      top: -100px;
-      right: -155px;
+      position: absolute;
+      bottom: 100px;
+      right: 0;
       height: 50px;
       width: 70%;
       background-image: url("../assets/img/Group111.png");
       animation: moveBg 7s linear infinite;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
     }
   }
   &-download {
@@ -213,9 +319,10 @@ export default {
     }
     .download-three {
       img {
-        width: 65%;
+        width: 90%;
         height: 100%;
-        padding-left: 100px;
+        padding-left: 60px;
+        padding-top: 10px;
       }
     }
   }
@@ -229,5 +336,19 @@ export default {
   height: 50px;
   background-image: url("../assets/img/Group69.png");
   animation: moveBg 10s linear infinite;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.mobile-animation-enter-active, 
+.mobile-animation-leave-active {
+  transition: 1s ease all;
+}
+.mobile-animation-enter-from,
+.mobile-animation-leave-to{
+  transform:translateX(-250px);
+}
+.mobile-animation-enter-to{
+  transform:translateX(0);
 }
 </style>

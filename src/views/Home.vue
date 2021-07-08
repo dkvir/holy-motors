@@ -1,13 +1,17 @@
 <template>
-  <div class="home for-all-components">
+  <section class="home for-all-components">
     <homeComponent
       :scroll="scroll"
       :handleCourier="handleCourier"
       :handleCompany="handleCompany"
       :activetabs="activetabs"
+      :rightsComponent="rightsComponent"
+      :confidencialComponent="confidencialComponent"
+      :contactComponent="contactComponent"
+      :aboutComponent="aboutComponent"
     />
-  </div>
-  <div class="lookingfor for-all-components">
+  </section>
+  <section class="lookingfor for-all-components">
     <div class="lookingfor__wrapper">
       <div class="lookingfor__wrapper-header all-lookingfor-wrappers">
         <div class="lookingfor__wrapper-header-img">
@@ -15,10 +19,10 @@
         </div>
       </div>
       <div class="lookingfor__wrapper-title all-lookingfor-wrappers">
-        <h3>
+        <h2>
           პარტნიორ კომპანიებსა და კურიერებს, რომლებიც ჩვენთან ერთად
           დაამკვიდრებენ სერვისის შეუდარებელ სტანდარტს.
-        </h3>
+        </h2>
       </div>
       <div class="lookingfor__wrapper-buttons all-lookingfor-wrappers">
         <button
@@ -50,12 +54,12 @@
       </transition>
     </div>
     <div class="lookingfor__hr"></div>
-  </div>
-  <div class="about for-all-components">
+  </section>
+  <section class="about for-all-components">
     <transition name="fadeUp"> 
-      <component class="footerComponent" :is="activetabs.footerComponent" />
-    </transition>
-    <div class="about__buttons">
+        <component class="footerComponent" :is="activetabs.footerComponent" />
+    </transition>  
+    <div class="about__buttons ">
        <button
           @click="rightsComponent()"
           class="lookingfor__wrapper-buttons-button about__buttons-btn "
@@ -75,7 +79,7 @@
           <span>საკონტაქტო ინფორმაცია</span>
         </button>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -87,6 +91,7 @@ import aboutComponent from "../components/aboutComponent.vue";
 import rightsComponent from "../components/rightsComponent.vue";
 import confidencialComponent from "../components/confidencialComponent.vue";
 import contactComponent from "../components/contactComponent.vue";
+
 
 
 
@@ -137,6 +142,7 @@ export default {
         behavior: "smooth",
       });
     };
+    
     const rightsComponent = () =>{
       activetabs.footerComponent = 'rightsComponent';
       scroll('.footerComponent')
@@ -149,6 +155,11 @@ export default {
       activetabs.footerComponent = 'contactComponent'
       scroll('.footerComponent')
     }
+    const aboutComponent = () =>{
+      activetabs.footerComponent = 'aboutComponent'
+      scroll('.about')
+    }
+   
 
     return {
       activetabs,
@@ -157,7 +168,9 @@ export default {
       scroll,
       rightsComponent,
       confidencialComponent,
-      contactComponent
+      contactComponent,
+      aboutComponent,
+      
     };
   },
 };
@@ -165,9 +178,10 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/main.scss";
+@import "../assets/scss/responsive.scss";
 
 .for-all-components {
-  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   background-color: $orange;
 }
@@ -180,31 +194,30 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 0 260px;
+    padding: 5vh 260px;
     width: 100%;
     height: 100%;
 
-    .all-lookingfor-wrappers {
-      margin: 35px 0;
-    }
+
     &-header {
       width: 100%;
+      height: 20vh;
       &-img {
         background-image: url("../assets/img/Ellipse9.png");
-        background-size: 400px 100%;
+        background-size: auto 100%;
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 20vh;
+        height: 100%;
         vertical-align: middle;
         &-inner {
-          width: 100%;
-          height: 20vh;
+          width: 80%;
+          height: 80%;
           background-image: url("../assets/img/Group41.png");
-          background-size: 250px;
+          background-size: 50% auto;
           background-position: center;
           background-repeat: no-repeat;
         }
@@ -212,20 +225,19 @@ export default {
     }
     &-title {
       width: 100%;
-      height: 170px;
+      height: 55vh;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      h3 {
-        line-height: 3.5rem;
+      h2 {
         padding: 0px 10px;
         text-align: center;
       }
     }
     &-buttons {
       width: 100%;
-      height: 120px;
+      height: 15vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -233,7 +245,8 @@ export default {
       &-button {
         width: 50%;
         height: 100%;
-        border: 1px solid $black;
+        border: 3px solid $black;
+        margin-bottom: 10px;
         z-index: 1;
         position: relative;
 
@@ -315,37 +328,40 @@ export default {
 
 .about {
   width: 100%;
-  height: 100vh;
-  padding-top: 35px;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   &__buttons{
-    width: 100%;
-    height: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    &-btn{
-      span{
-        font-size: 24px;
+      width: 100%;
+      height: 15vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $orange;
+      &-btn{
+        span{
+          font-size: 24px;
+        }
       }
     }
-  }
+
+}
+
   .fadeUp-enter-from {
     height: 0;
     opacity: 0;
   }
   .fadeUp-enter-to {
-    height: 100vh;
+    height: 85%;
     opacity: 1;
   }
   .fadeUp-enter-active {
     transition: all .7s ease;
   }
   .fadeUp-leave-from {
-    height: 100vh;
+    height: 85%;
     opacity: 1;
   }
   .fadeUp-leave-to {
@@ -356,5 +372,4 @@ export default {
   .fadeUp-leave-active {
     transition: all .7s ease;
   }
-}
 </style>

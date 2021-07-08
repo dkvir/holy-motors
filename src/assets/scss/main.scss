@@ -2,15 +2,19 @@
 @import "@/assets/scss/fonts/fonts.scss";
 @import "@/assets/scss/colors.scss";
 @import "@/assets/scss/animations.scss";
+@import "@/assets/scss/responsive.scss";
+
 
 
 h2 {
-    font-size: 36px;
+    font-size: 60px;
     font-family: $Helvetica_bold;
+    line-height: 5.5rem;
   }
   h3 {
     font-size: 28px;
-    font-family: $Helvetica_bold;
+    font-family: $Helvetica_roman;
+    line-height: 2.5rem;
   }
   h4 {
     font-size: 20px;
@@ -23,20 +27,52 @@ h2 {
     font-family: $Helvetica_bold;
   }
   p{
+    font-size: 18px;
     font-family: $Helvetica_normal;
+    line-height: 3rem;
   }
 
   input[type="text"] {
     background-color: transparent;
     border: 1px solid $black;
-    height: 30px;
+    height: 50px;
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 10px;
-    ::placeholder {
-      color: $black;
-    }
   }
+  ::-webkit-input-placeholder {
+    color: black!important;
+    opacity: 80%;
+
+}
+:-moz-placeholder {
+    color: black!important;
+    opacity: 80%;
+
+}
+::-moz-placeholder {
+    color: black!important;
+    opacity: 80%;
+
+}
+:-ms-input-placeholder {
+    color: black!important;
+    opacity: 80%;
+
+
+}
+::-ms-input-placeholder {
+    color: black!important;
+    opacity: 80%;
+
+
+}
+
+::placeholder {
+    color: black!important;
+    opacity: 80%;
+
+}
   
   input[type="checkbox"] {
     visibility: hidden;
@@ -69,3 +105,6 @@ h2 {
   input[type="checkbox"]:focus + label::before {
       outline: rgb(59, 153, 252) auto 5px;
   }
+
+
+  

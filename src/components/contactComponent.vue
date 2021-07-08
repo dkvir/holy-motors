@@ -6,25 +6,20 @@
         <div class="contact__items">
           <div class="contact__items__icon">
             <fa class="icon" :icon="['fas', 'phone']" />
-
           </div>
           <div class="contact__items__title">
-              <p>+ 995 32 2 25 54 52</p>
+            <p>+ 995 322 25 54 52</p>
           </div>
         </div>
         <div class="contact__items">
           <div class="contact__items__icon">
             <fa class="icon" :icon="['fas', 'envelope']" />
-
-
-
           </div>
           <div class="contact__items__title"><p>mot2@info.ge</p></div>
         </div>
         <div class="contact__items">
           <div class="contact__items__icon">
             <fa class="icon" :icon="['fab', 'facebook']" />
-
           </div>
           <div class="contact__items__title"><p>MOT2</p></div>
         </div>
@@ -41,58 +36,52 @@ export default {};
 @import "../assets/scss/main.scss";
 @import "../assets/scss/fonts/fonts.scss";
 
-.footers {
+.footers__body {
   width: 100%;
   height: 100%;
-  position: relative;
-  &__body {
+  background-color: $black;
+  display: flex;
+  .contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    color: $orange;
     width: 100%;
     height: 100%;
-    background-color: $black;
-    display: flex;
-    .contact{
+    &__items {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &__icon {
+        width: 200px;
+        height: 200px;
+        background-color: $orange;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        padding: 50px;
-        color: $orange;
-        width: 100%;
-        height: 100%;
-        &__items{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+        justify-content: center;
 
-            &__icon{
-                width: 50%;
-                height: 50%;
-                background-color: $orange;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                
-                .icon{
-                    width: 50%;
-                    height: 50%;
-                    color: $black;
-                }
-            }
-            &__title{
-                margin-top: 20px;
-                width: 50%;
-                height: 40px;
-                background-color: $orange;
-                color: $black;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+        .icon {
+          width: 50%;
+          height: 50%;
+          color: $black;
         }
-
+      }
+      &__title {
+        margin-top: 20px;
+        width: 50%;
+        height: 40px;
+        background-color: $orange;
+        color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }

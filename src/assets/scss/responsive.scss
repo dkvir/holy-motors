@@ -1,0 +1,543 @@
+@media screen and (max-width: 1440px) {
+  h2 {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  h2 {
+    font-size: 32px;
+    line-height: 3.5rem;
+  }
+  p {
+    font-size: 20px;
+    line-height: 1.5rem;
+  }
+  .btn {
+    width: 200px !important;
+  }
+  .btn-company {
+    right: 137px !important;
+  }
+  .btn-rights {
+    right: -20px !important;
+  }
+  .about__wrapper-text p {
+        font-size: 18px;
+        line-height: 1.5rem;
+  }
+  .footers__body__wrapper p {
+    font-size: 18px;
+        line-height: 1.5rem!important;
+}
+}
+@media screen and (max-width: 1024px) {
+  //home component
+
+  .home__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 120vh;
+    .body-both {
+      width: 85%;
+    }
+    &-slogan {
+      padding-left: 20px;
+      height: 15% !important;
+      padding-bottom: 20px;
+      img {
+        width: 90%;
+        height: 90%;
+      }
+    }
+  }
+  .home__body-title {
+    padding: 20px;
+  }
+  .home__body-download {
+    padding: 20px;
+  }
+  .home__body-download-wrapper {
+    flex-direction: column;
+  }
+  .download-one {
+    width: 100% !important;
+
+    a {
+      border-radius: 500px !important;
+    }
+  }
+  .download-three {
+    width: 100%;
+    padding: 0;
+  }
+  .home__body__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35% !important;
+    position: static;
+    padding: 20px 0;
+    &-video {
+      border-radius: 30px;
+      border: 8px solid $black;
+      width: 90%;
+      height: 100%;
+      position: static;
+      video {
+        height: 120%;
+      }
+    }
+    .onvideo-animation {
+      top: 12%;
+      width: 350px;
+      height: 110px;
+    }
+  }
+
+  .home__bottom {
+    width: 100%;
+    height: 110px;
+  }
+  .buttons{
+      display: none;
+  }
+  .header__background {
+    background-image: url('~@/assets/img/Group70.png');
+    background-color: black;
+    background-size: auto auto;
+    height: 115px;
+  }
+
+  //lookingfor component
+
+  .lookingfor__wrapper {
+    padding: 5vh 40px !important;
+    &-header {
+      &-img {
+        // width: 80%!important;
+        height: 80% !important;
+      }
+    }
+    &-title {
+      height: 40vh !important;
+
+      h2 {
+        font-size: 50px;
+        line-height: 4.5rem;
+      }
+    }
+    &-buttons {
+      flex-direction: column;
+      height: 30vh !important;
+      &-button {
+        width: 100% !important;
+      }
+    }
+  }
+
+  //company component
+  h2 {
+    font-size: 50px;
+    line-height: 4.5rem;
+  }
+  h4 {
+    font-size: 30px;
+    line-height: 3.5rem;
+  }
+  input[type="text"] {
+    height: 80px;
+  }
+  //
+  .company {
+    padding: 20px 40px;
+    &__header {
+      height: 20%;
+      img {
+        width: 100%;
+        padding: 0;
+      }
+    }
+    &__form {
+      height: 80% !important;
+      &-inputs {
+        grid-template-columns: auto !important;
+        grid-template-rows: auto !important ;
+      }
+      &__checkbox {
+        &-title {
+          height: 30% !important;
+        }
+        &__boxes {
+        //   flex-wrap: wrap;
+          height: 70% !important;
+          &-box {
+            width: 50% !important;
+            height: 30% !important;
+            padding: 0 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  //company component
+  .about {
+    position: relative;
+    &__wrapper {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+
+      &-title {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 0 60px;
+      }
+      &-topanim {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        position: absolute;
+        width: 370px;
+        height: 150px;
+        right: 0;
+        top: 16%;
+        margin: 0;
+      }
+      &-text {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        padding: 40px 60px;
+        p {
+          font-size: 24px;
+          line-height: 3.5rem;
+        }
+      }
+
+      &__logos {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        padding: 20px 60px;
+      }
+      &-bottanim {
+        display: none;
+      }
+    }
+
+    &__buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .rights__body {
+    p {
+      font-size: 30px;
+      line-height: 2.5rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+    .onvideo-animation {
+        top: 12%!important;
+        width: 250px!important;
+        height: 85px!important;
+    }
+    h2 {
+        font-size: 32px;
+        line-height: 3.5rem;
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 2.5rem;
+    }
+    p {
+        font-size: 16px;
+        line-height: 2.5rem;
+    }
+    .rights__body p{
+        font-size: 18px;
+        line-height: 2.5rem;
+    }
+    .lookingfor__wrapper-title h2 {
+        font-size: 32px;
+        line-height: 3.5rem;
+    }
+    .lookingfor__wrapper-header-img {
+        background-size: auto 90%!important;
+    }
+    .about__wrapper-text p {
+        font-size: 18px;
+        line-height: 2.5rem;
+    }
+    .about__wrapper-topanim {
+        top: 17%!important;
+        width: 350px!important;
+        height: 100px!important;
+    }
+    .contact__items__icon{
+        width: 150px!important;
+        height: 150px!important;
+    }
+    .contact__items__title{
+        width: 90%!important;
+    }
+    .home__body {
+        height: 100vh;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .onvideo-animation {
+        top: 14%!important;
+        width: 250px!important;
+        height: 100px!important;
+    }
+    .lookingfor__wrapper-title h2 {
+        font-size: 42px;
+        line-height: 3.5rem;
+    }
+    h2 {
+        font-size: 42px;
+        line-height: 3.5rem;
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 2.5rem;
+    }
+    .company__header img {
+        width: 80%;
+    }
+    .about__wrapper-topanim{
+        width: 290px;
+        height: 110px;
+        top: 15%;
+    }
+    .about__wrapper {
+        padding: 40px 0;
+    }
+    .about__buttons {
+        height: 20vh!important;
+    }
+    .footerComponent{
+        height: 80vh;
+    }
+    .contact{
+        flex-direction: row;
+        padding: 0;
+    }
+    .contact__items__title{
+        width: 90%;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .onvideo-animation {
+        top: 15%!important;
+        width: 200px!important;
+        height: 65px!important;
+    }
+    h2 {
+        font-size: 32px;
+        line-height: 3.5rem;
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 2.5rem;
+    }
+    p {
+        font-size: 16px;
+        line-height: 2.5rem;
+    }
+    .rights__body p{
+        font-size: 18px;
+        line-height: 2.5rem;
+    }
+    .lookingfor__wrapper-title h2 {
+        font-size: 32px;
+        line-height: 3.5rem;
+    }
+    .lookingfor__wrapper-header-img {
+        background-size: auto 90%!important;
+    }
+    .about__wrapper-text p {
+        font-size: 18px;
+        line-height: 2.5rem;
+    }
+    .about__wrapper-topanim {
+        top: 13%!important;
+        width: 250px!important;
+        height: 75px!important;
+    }
+    .contact__items__icon{
+        width: 150px!important;
+        height: 150px!important;
+    }
+    .contact__items__title{
+        width: 90%!important;
+    }
+    .home__body {
+        height: 100vh;
+    }
+    .home__bottom {
+        height: 60px;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    .header__background {
+        height: 100px;
+
+    }
+    .nav__button{
+        button{
+            img{
+                width: 40px!important;
+                height: 40px!important;
+            }
+        }
+    }
+    .onvideo-animation {
+        top: 17%!important;
+        width: 150px!important;
+        height: 55px!important;
+    }
+    .home__body{
+        padding: 20px 0!important;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 3.5rem;
+    }
+    h4 {
+        font-size: 14px;
+        line-height: 2.5rem;
+    }
+    p {
+        font-size: 12px;
+    }
+    .about__wrapper-text p {
+        font-size: 12px;
+        line-height: 1.5rem;
+    }
+    .about__wrapper-text {
+        padding: 20px 30px!important;
+    }
+    .lookingfor__wrapper {
+        padding: 5vh 20px !important;
+    } 
+    
+    .home__body-title {
+        padding: 20px 0 0 0 !important;
+    }
+    .home__body-slogan{
+        padding: 0 0 20px 0!important;
+    }
+    .home__body-download {
+        padding: 0!important;
+    }
+    .about__wrapper-title {
+        padding: 0 20px!important;
+    }
+
+    .lookingfor__wrapper-title h2 {
+            font-size: 22px;
+            line-height: 2.5rem;
+            height: 35vh;
+    }
+    .lookingfor__wrapper-header-img {
+        background-size: auto 80%!important;
+    }
+    .about__wrapper-topanim {
+        top: 15% !important;
+        width: 150px !important;
+        height: 55px !important;
+    }
+    .footerComponent {
+        height: 75vh;
+    }
+    .about__buttons {
+        height: 25vh !important;
+    }
+    .footers__body-bAnim {
+        margin-right: 20px ;
+    }
+    .rights__body p {
+        font-size: 12px;
+        padding: 0!important;
+    }
+    .contact__items__icon {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .contact{
+        padding: 20px!important;
+
+    }
+    .lookingfor {
+        height: 105vh!important;
+    }
+    .about__buttons {
+        height: 30vh!important;
+    }
+    .footerComponent {
+        height: 70vh;
+    }
+
+    .about__wrapper__logos {
+        padding: 20px!important;
+
+    }
+    .about__wrapper {
+        padding: 20px 0!important;
+    }
+    .header__background {
+        height: 80px!important;
+    }
+    .header__background .nav__button {
+        width: 80px;
+        height: 80px;
+    }
+
+
+  }
+
+  @media screen and (max-width: 360px) {
+    .about__wrapper-topanim {
+        top: 13%!important;
+        width: 150px!important;
+        height: 45px!important;
+    }
+    .onvideo-animation {
+        top: 19%!important;
+        width: 100px!important;
+        height: 45px!important;
+    }
+    h4 {
+        font-size: 12px;
+        line-height: 2.5rem;
+    }
+    p{
+        font-size: 8px;
+    }
+}

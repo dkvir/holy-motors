@@ -49,7 +49,8 @@ export default {};
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(5, 20%);
+  padding: 70px 0;
 
   &-title {
     grid-column-start: 2;
@@ -59,34 +60,37 @@ export default {};
     width: 100%;
 
     img {
-        padding-top: 10px;
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
 
     }
   }
   &-topanim {
     width: 100%;
-    height: 90px;
+    height: 85%;
+    margin-left: 120px;
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
-    grid-row-end: 1;
+    grid-row-end: 2;
     background-image: url('../assets/img/Group69.png');
     background-repeat: no-repeat;
     animation: moveBg 10s linear infinite;
-
+    background-size: auto 100%;
 
   }
   &-bottanim {
-    width: 90%;
-    height: 90px;
+    width: 100%;
+    height: 85%;
+    margin-right: 77px;
+    margin-top: 123px;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
     background-image: url('../assets/img/Group69.png');
     background-repeat: no-repeat;
+    background-size: auto 100%;
     animation: moveBg 10s linear infinite;
 
 
@@ -98,11 +102,12 @@ export default {};
     grid-row-end: 5;
     height: 100%;
     overflow: scroll;
-    padding: 20px 0;
+    padding: 30px 30px;
     p{
+      font-size: 24px;
       font-family: $Helvetica_normal;
       padding-bottom: 10px;
-      line-height: 1.5rem;
+      line-height: 2.5rem;
     }
   }
   &__logos {
@@ -116,7 +121,7 @@ export default {};
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
-    padding-bottom: 40px;
+    padding: 30px;
     img {
       width: 50%;
     }
